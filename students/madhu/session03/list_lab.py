@@ -2,7 +2,7 @@
 
 fruits = ['Apples','Pears','Oranges','Peaches']
 
-def showfruits():
+def showfruits(fruits):
     for i in fruits:
         print (i)        
 
@@ -10,6 +10,7 @@ def addfruit():
     print('Enter another fruit to add to the list:')
     response = input("==> ").strip()
     fruits.append(response) #add the user inputted fruit at the end of the list# 
+    return fruits
 
 
 def enternum():
@@ -29,12 +30,16 @@ def addfruit2():
     """Enter a user inputted fruit to the beginning of the list with the '+' operator"""
     print ('Enter a fruit to add at the beginning of the list')
     response = input("==> ").strip()
+    new_fruit = []
+    new_fruit = response
+    return (new_fruit + fruits)
 
 
 def addfruits3():
     print ('Enter another fruit to add at the beginning of the list')
     response = input("==> ").strip()
     fruits.insert(0,response)
+    return fruits
 
 
 def showpfruits():
@@ -46,32 +51,52 @@ def showpfruits():
 
 def removefruit():
     """Remove the last fruit from the list"""
-    fruits.pop()
+    copy_fruits = fruits[:]
+    copy_fruits.pop()
+    return copy_fruits
 
 
 def deletechoosenfruit():
     """Ask the user for a fruit to delete and find it and delete it."""
     print('Enter the fruit to delete from the below list:')
-    showfruits()
+    showfruits(new_fruits)
     response = input("==> ")
-    fruits.remove(response)
+    new_fruits.remove(response)
+    return new_fruits
+
+def likeafruit():
+    """Ask the user for input and perform a set of actions based on whether they like the fruit or not."""
+    lowerfruits = item.lower() for item in fruits
+    for i in range(len(fruits)):
+        
 
 
 if __name__ == "__main__":
-    showfruits()
+    showfruits(fruits)
+    
     addfruit()
-    showfruits() #display the list#
+    showfruits(fruits) #display the list#
+    
     enternum()
-#    addfruit2()
-    addfruits3()
-    showfruits() #display the list#
+    
+    #addfruit2()
+    #showfruits()
+    
+    addfruits3() #add a fruit to the beginning of the list using insert()#
+    showfruits(fruits) #display the list#
+    
     print('Fruits starting with P are:')
     showpfruits()
+    
     print('The list of Fruits:')
-    showfruits() #display the list#
+    showfruits(fruits) #display the list#
+    
     print('The list after removing the last fruit:')
-    removefruit()
-    showfruits()
+    new_fruits =  removefruit()
+    showfruits(new_fruits)
+
     deletechoosenfruit()
     print('The list of fruits after deleting the choosen fruit:')
-    showfruits()
+    showfruits(new_fruits)
+
+    
