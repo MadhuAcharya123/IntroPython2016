@@ -42,7 +42,7 @@ def is_value(di,val):
 
 
 def create_sets():
-    """Create sets s2, s3 and s4 that contain numbers from zero through twenty, divisible 2, 3 and 4."
+    """Create sets s2, s3 and s4 that contain numbers from zero through twenty, divisible 2, 3 and 4."""
     s2 = set()
     s3 = set()
     s4 = set()
@@ -50,14 +50,44 @@ def create_sets():
     for i in range(21):
         if i%4 == 0:
             s4.add(i)
-        elif i%3 == 0:
+        if i%3 == 0:
             s3.add(i)
-        elif i%2 ==0:
+        if i%2 ==0:
             s2.add(i)
     print(s2)
     print(s3)
     print(s4)
 
+    a = s3.issubset(s2)
+    print(a)
+
+    b = s4.issubset(s2)
+    print(b)
+
+
+def is_a_subset((s1),(s2)):
+    """Display if s2 is a subset of s1."""
+    res = s2.issubset(s1)
+    print(res)
+
+
+
+def un_in_sets():
+    """Create a set with the letters in 'Python' and add 'i' to the set.
+    
+       Create a frozenset with the letters in 'marathon'.
+    
+       Display the union and intersection of the two sets."""
+    s = set('Python')
+    s.add('i')
+
+    fs = frozenset(('marathon'))
+
+    union_of_sets = set.union(s,d)
+    print(union_of_sets)
+
+    intersection_of_sets = set.intersection(s,d)
+    print(intersection_of_sets)
 
 
 
@@ -104,5 +134,8 @@ if __name__ == '__main__':
 
     create_sets()
 
-    print("\n") #inserting a newline character for readability#
+    #is_a_subset(s2,s3)
 
+    print("\n") #inserting a newline character for readability#
+    
+    un_in_sets()
