@@ -72,7 +72,7 @@ def is_a_subset((s1),(s2)):
 
 
 
-def un_in_sets():
+def union_intersection():
     """Create a set with the letters in 'Python' and add 'i' to the set.
     
        Create a frozenset with the letters in 'marathon'.
@@ -138,4 +138,4 @@ if __name__ == '__main__':
 
     print("\n") #inserting a newline character for readability#
     
-    un_in_sets()
+#    union_intersection()
